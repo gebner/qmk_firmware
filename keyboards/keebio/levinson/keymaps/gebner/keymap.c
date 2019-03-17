@@ -20,8 +20,8 @@ extern keymap_config_t keymap_config;
 #define KC_ KC_TRNS
 #define KC_RESET RESET
 
-#define KC_ESC_LCTL LCTL(KC_ESC)
-#define KC_ENT_RCTL RCTL(KC_ENT)
+#define KC_ESC_LCTL MT(MOD_LCTL, KC_ESC)
+#define KC_ENT_RCTL MT(MOD_RCTL, KC_ENT)
 #define KC_SCLN_MOVM LT(_MOVM, KC_SCLN)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
