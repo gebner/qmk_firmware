@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 TAB,       Q,      W,          E,     R,      T,         Y,         U,     I,     O,      P,          BSPC,      \
 ESC_LCTL,  A,      S,          D,     F,      G,         H,         J,     K,     L,      SCLN_MOVM,  ENT_RCTL,  \
 LSFT,      Z,      X,          C,     V,      B,         N,         M,     COMM,  DOT,    SLSH,       RSFT,      \
-MOVM,      LCTL,   LALT,       LGUI,  NUMER,  SPC_LSFT,  SPC_RSFT,  SYMB,  RALT,  ,       ,           MOVM       \
+MOVM,      LCTL,   LALT,       LGUI,  NUMER,  SPC_LSFT,  SPC_RSFT,  SYMB,  RALT,  RGUI,   RCTL,       MOVM       \
 ),
 
 [_SYMB]    =       LAYOUT_kc(  \
