@@ -18,7 +18,7 @@ in
 stdenv.mkDerivation {
   name = "qmk-firmware";
 
-  buildInputs = [ dfu-programmer dfu-util diffutils git ]
+  buildInputs = [ dfu-programmer dfu-util diffutils bear git ]
     ++ lib.optional avr [ avrbinutils avrgcc avrlibc avrdude ]
     ++ lib.optional arm [ gcc-arm-embedded ]
     ++ lib.optional teensy [ teensy-loader-cli ];
