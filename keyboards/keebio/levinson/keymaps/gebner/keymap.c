@@ -28,39 +28,39 @@ extern keymap_config_t keymap_config;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_BASE]    =       LAYOUT_kc(  \
-TAB,       Q,      W,          E,     R,      T,         Y,         U,     I,     O,      P,          BSPC,      \
-ESC_LCTL,  A,      S,          D,     F,      G,         H,         J,     K,     L,      SCLN_MOVM,  ENT_RCTL,  \
-LSFT,      Z,      X,          C,     V,      B,         N,         M,     COMM,  DOT,    SLSH,       RSFT,      \
-MOVM,      LCTL,   LALT,       LGUI,  NUMER,  SPC_LSFT,  SPC_RSFT,  SYMB,  RALT,  RGUI,   RCTL,       MOVM       \
+[_BASE]    =      LAYOUT_kc(
+TAB,       Q,     W,          E,     R,     T,         Y,         U,      I,     O,      P,          BSPC,
+ESC_LCTL,  A,     S,          D,     F,     G,         H,         J,      K,     L,      SCLN_MOVM,  ENT_RCTL,
+LSFT,      Z,     X,          C,     V,     B,         N,         M,      COMM,  DOT,    SLSH,       RSFT,
+MOVM,      LCTL,  LALT,       LGUI,  SYMB,  SPC_LSFT,  SPC_RSFT,  NUMER,  RALT,  RGUI,   RCTL,       MOVM
 ),
 
-[_SYMB]    =       LAYOUT_kc(  \
-TILD,      EXLM,   AT,         HASH,  DLR,    PERC,      CIRC,      AMPR,  ASTR,  LPRN,   RPRN,       BSLS,      \
-DEL,       F1,     F2,         F3,    F4,     F5,        F6,        UNDS,  PLUS,  LCBR,   RCBR,       DQUO,      \
-,          F7,     F8,         F9,    F10,    F11,       F12,       MINS,  EQL,   LBRC,   RBRC,       ,          \
-,          ,       ,           ,      KEEB,   ,          DEL,       ,      ,      ,       ,           \
+[_SYMB]    =      LAYOUT_kc(
+TILD,      EXLM,  AT,         HASH,  DLR,   PERC,      CIRC,      AMPR,   ASTR,  LPRN,   RPRN,       BSLS,
+DEL,       F1,    F2,         F3,    F4,    F5,        F6,        UNDS,   PLUS,  LCBR,   RCBR,       DQUO,
+,          F7,    F8,         F9,    F10,   F11,       F12,       MINS,   EQL,   LBRC,   RBRC,       ,
+,          ,      ,           ,      ,      ,          DEL,       KEEB,   ,      ,       ,
 ),
 
-[_NUMER]   =       LAYOUT_kc(  \
-GRV,       1,      2,          3,     4,      5,         6,         7,     8,     9,      0,          BSLS,      \
-DEL,       F1,     F2,         F3,    F4,     F5,        F6,        4,     5,     6,      ,           QUOT,      \
-,          F7,     F8,         F9,    F10,    F11,       F12,       1,     2,     3,      ,           ,          \
-,          ,       ,           ,      ,       BSPC,      ,          KEEB,  ,      ,       ,           \
+[_NUMER]   =      LAYOUT_kc(
+GRV,       1,     2,          3,     4,     5,         6,         7,      8,     9,      0,          BSLS,
+DEL,       F1,    F2,         F3,    F4,    F5,        F6,        4,      5,     6,      ,           QUOT,
+,          F7,    F8,         F9,    F10,   F11,       F12,       1,      2,     3,      MINS,       ,
+,          ,      ,           ,      KEEB,  BSPC,      ,          ,       ,      ,       ,
 ),
 
-[_MOVM]    =       LAYOUT_kc(  \
-,          ,       WH_L,       WH_U,  WH_D,   WH_R,      HOME,      PGDN,  PGUP,  END,    PSCR,       INS,       \
-,          ,       MS_L,       MS_U,  MS_D,   MS_R,      LEFT,      DOWN,  UP,    RIGHT,  ,           ,          \
-,          ,       ,           BTN2,  BTN1,   BTN3,      MUTE,      VOLD,  VOLU,  MPLY,   ,           ,          \
-,          ,       ,           ,      KEEB,   ,          ,          ,      ,      ,       ,           \
+[_MOVM]    =      LAYOUT_kc(
+,          ,      WH_L,       WH_U,  WH_D,  WH_R,      HOME,      PGDN,   PGUP,  END,    PSCR,       INS,
+,          ,      MS_L,       MS_U,  MS_D,  MS_R,      LEFT,      DOWN,   UP,    RIGHT,  ,           ,
+,          ,      ,           BTN2,  BTN1,  BTN3,      MUTE,      VOLD,   VOLU,  MPLY,   ,           ,
+,          ,      ,           ,      KEEB,  ,          ,          ,       ,      ,       ,
 ),
 
-[_KEEB]    =       LAYOUT_kc(  \
-,          RESET,  ,           ,      ,       ,          ,          ,      ,      ,       ,           ,          \
-,          ,       ,           ,      ,       ,          ,          ,      ,      ,       ,           ,          \
-,          ,       ,           ,      ,       ,          ,          ,      ,      ,       ,           ,          \
-,          ,       ,           ,      ,       ,          ,          ,      ,      ,       ,           \
+[_KEEB]    =      LAYOUT_kc(
+,          ,      ,           ,      ,      ,          ,          ,       ,      ,       ,           ,
+,          ,      ,           ,      ,      ,          ,          ,       ,      ,       ,           ,
+,          ,      ,           ,      ,      ,          ,          ,       ,      ,       ,           ,
+,          ,      ,           ,      ,      ,          ,          ,       ,      ,       ,
 ),
 
 };
