@@ -4,6 +4,7 @@
 *.eep
 *.elf
 *.hex
+*.zip
 *.qmk
 !util/bootloader.hex
 !quantum/tools/eeprom_reset.hex
@@ -37,6 +38,7 @@ doxygen/
 /keyboards/*/*/*/keymaps/Makefile
 /keyboards/*/*/*/*/keymaps/Makefile
 /keyboards/*/*/*/*/*/keymaps/Makefile
+libnrf.*.a
 
 # Eclipse/PyCharm/Other IDE Settings
 .cproject
