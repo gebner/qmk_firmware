@@ -1,6 +1,6 @@
 # dfu-programmer doesn't have darwin on it's list of supported platforms
 { pkgs ? import <nixpkgs> { config = { allowUnsupportedSystem = true; }; }
-, avr ? true, arm ? true, teensy ? true }:
+, avr ? false, arm ? true, teensy ? true, nrf5 ? true }:
 
 with pkgs;
 let
@@ -13,6 +13,11 @@ let
     "-B${avrlibc}/avr/lib/avr51"
     "-L${avrlibc}/avr/lib/avr51"
   ];
+
+  nrfsdk15 = fetchzip {
+    url = "https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.0.0_a53641a.zip";
+    sha256 = "12m9bxjbvq09sigbw7y3fzs280l6qdl9514ildywp1dsb63p2jbd";
+  };
 in
 
 stdenv.mkDerivation {
@@ -25,4 +30,6 @@ stdenv.mkDerivation {
 
   CFLAGS = lib.optional avr avr_incflags;
   ASFLAGS = lib.optional avr avr_incflags;
+
+  NRFSDK15_ROOT = lib.optional nrf5 "${nrfsdk15}";
 }
