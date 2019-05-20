@@ -46,6 +46,7 @@ extern keymap_config_t keymap_config;
 
 // Fillers to make layering more clear
 #define _______ KC_TRNS
+#define xxxxxxx KC_NO
 #define FN1_Q LT(1, KC_Q)
 
 enum {
@@ -67,8 +68,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MOVM] = LAYOUT_ortho_3x10(
 		KC_TAB,  KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,    KC_INS,
-		_______, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,  _______,
-		_______, _______, KC_BTN2, KC_BTN1, KC_BTN3,  KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY,   _______
+		xxxxxxx, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,  _______,
+		_______, _______, KC_BTN2, KC_BTN1, KC_BTN3,  _______, KC_VOLD, KC_VOLU, KC_MPLY,   xxxxxxx
   ),
 
   [_NUM] = LAYOUT_ortho_3x10(
@@ -79,14 +80,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FKEYS] = LAYOUT_ortho_3x10(
     KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-    KC_F11, KC_F12, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    KC_F11, KC_F12, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
+    _______, _______, _______, _______, _______, _______, _______, _______, xxxxxxx, xxxxxxx
   ),
 
   [_FN] = LAYOUT_ortho_3x10(
-    _______, DEL_ID0, DEL_ID1, DEL_ID2, DEL_ID3, DEL_ID4, _______, _______, ENT_SLP, BATT_LV,
-    AD_WO_L, ADV_ID0, ADV_ID1, ADV_ID2, ADV_ID3, ADV_ID4, _______, _______, USB_EN, USB_DIS,
-    _______, _______, _______, _______, _______, _______, ENT_DFU, _______, BLE_EN, BLE_DIS
+    _______, DEL_ID0, DEL_ID1, DEL_ID2, DEL_ID3, DEL_ID4, xxxxxxx, xxxxxxx, ENT_SLP, BATT_LV,
+    AD_WO_L, ADV_ID0, ADV_ID1, ADV_ID2, ADV_ID3, ADV_ID4, xxxxxxx, xxxxxxx, USB_EN, USB_DIS,
+    xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, ENT_DFU, xxxxxxx, BLE_EN, BLE_DIS
   ),
 
 };
