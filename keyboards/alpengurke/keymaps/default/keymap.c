@@ -93,7 +93,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  char str[16];
   if (record->event.pressed) {
     switch (keycode) {
     case DELBNDS:
@@ -105,19 +104,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case USB_EN:
       set_usb_enabled(true);
       return false;
-      break;
     case USB_DIS:
       set_usb_enabled(false);
       return false;
-      break;
     case BLE_EN:
       set_ble_enabled(true);
       return false;
-      break;
     case BLE_DIS:
       set_ble_enabled(false);
       return false;
-      break;
     case ADV_ID0:
       restart_advertising_id(0);
       return false;
@@ -145,10 +140,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DEL_ID3:
       delete_bond_id(3);
       return false;
-    case BATT_LV:
+    case BATT_LV: {
+      char str[16];
       sprintf(str, "%4dmV", get_vcc());
-      send_string(str);
+      int delay_ms = 5;
+      send_string_with_delay(str, delay_ms);
       return false;
+    }
     case ENT_DFU:
       bootloader_jump();
       return false;
