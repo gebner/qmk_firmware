@@ -92,6 +92,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+void wait_for_power_on_keycombo() {
+  const bool power_on_keycombo[MATRIX_ROWS][MATRIX_COLS] = LAYOUT_ortho_3x10(
+    1,0,0,0,0,0,0,1,0,0,
+    0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0
+  );
+
+  const uint16_t total_wait_ms = 400;
+  const uint8_t iter_wait_ms = 50;
+  const uint8_t num_iters = total_wait_ms / iter_wait_ms;
+
+  for (uint8_t i = 0; i < num_iters; i++) {
+    matrix_scan();
+    bool power_on_keycombo_is_pressed = true;
+    for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
+      for (uint8_t c = 0; c < MATRIX_COLS; c++) {
+        if (!!(matrix_get_row(r) & (1 << c)) != power_on_keycombo[r][c]) {
+          power_on_keycombo_is_pressed = false;
+        }
+      }
+    }
+
+    if (power_on_keycombo_is_pressed) {
+      // power on
+      return;
+    }
+
+    wait_ms(iter_wait_ms);
+  }
+
+  sleep_mode_enter();
+}
+
+void matrix_init_user() {
+  wait_for_power_on_keycombo();
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch (keycode) {
@@ -155,7 +192,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   else if (!record->event.pressed) {
     switch (keycode) {
     case ENT_SLP:
-      sleep_mode_enter();
+      wait_for_power_on_keycombo();
       return false;
     }
 
