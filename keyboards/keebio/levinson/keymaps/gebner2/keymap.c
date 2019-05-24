@@ -21,7 +21,7 @@ enum {
 #define KC_ENT_RCTL MT(MOD_RCTL, KC_ENT)
 #define KC_SCLN_MOVM LT(_MOVM, KC_SCLN)
 #define KC_SPC_LSFT MT(MOD_LSFT, KC_SPC)
-#define KC_COMM_MOVM LT(_MOVM, COMM)
+#define KC_COMM_MOVM LT(_MOVM, KC_COMM)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
